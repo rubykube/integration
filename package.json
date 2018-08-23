@@ -1,0 +1,22 @@
+{
+  "name": "integration",
+  "version": "1.0.0",
+  "description": "Ruybkube integration testing framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rubykube/integration.git"
+  },
+  "author": "Louis <lbellet@heliostech.fr>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rubykube/integration/issues"
+  },
+  "homepage": "https://github.com/rubykube/integration#readme",
+  "dependencies": {
+    "cypress": "^3.1.0"
+  }
+}
