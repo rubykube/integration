@@ -43,16 +43,19 @@ Cypress.Commands.add('login', () => {
 
         cy.visit(peatio.host)
 
-        cy.get('a.btn').click()
+        cy.get('a.btn').then((button) => {
+            if ((/auth\/barong/).test(button[0].href)) {
+                cy.visit(button[0].href)
+                cy.fixture('user.json').then((user) => {
+                    cy.get('#account_email').type(user.login).should('have.value', user.login)
 
-        cy.fixture('user.json').then((user) => {
-            cy.get('#account_email').type(user.login).should('have.value', user.login)
+                    cy.contains('.btn-success', 'Submit').click()
 
-            cy.contains('.btn-success', 'Submit').click()
+                    cy.get('#account_password').type(user.password)
 
-            cy.get('#account_password').type(user.password)
-
-            cy.contains('.btn-success', 'Submit').click()
+                    cy.contains('.btn-success', 'Submit').click()
+                })
+            }
         })
     })
 })
