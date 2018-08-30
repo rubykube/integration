@@ -4,5 +4,6 @@
     "pluginsFile": false,
     "screenshotsFolder": "screenshots",
     "supportFile": "support/index.js",
-    "videosFolder": "videos"
+    "videosFolder": "videos",
+    "projectId": "i1xxek"
 }
