@@ -13,7 +13,8 @@
     "explorerTransaction": "/tBCC/tx/#{txid}",
     "baseFactor": "100000000",
     "server": "http://admin:changeme@35.204.89.49:18332",
-    "gateway": "bitcoincashd"
+    "gateway": "bitcoincashd",
+    "blockchainKeyPrefix": "bch"
   },
   "BTC": {
     "client": "bitcoin",
@@ -21,15 +22,17 @@
     "explorerTransaction": "/tx/#{txid}",
     "baseFactor": "100000000",
     "server": "http://admin:changeme@35.204.72.225:18332",
-    "gateway": "bitcoind"
+    "gateway": "bitcoind",
+    "blockchainKeyPrefix": "btc"
   },
   "DASH": {
-    "client": "",
+    "client": "dash",
     "explorerAddress": "",
     "explorerTransaction": "",
     "baseFactor": "100000000",
     "server": "http://admin:changeme@35.204.90.220:19998",
-    "gateway": "dashd"
+    "gateway": "dashd",
+    "blockchainKeyPrefix": "dash"
   },
   "ETH": {
     "client": "ethereum",
@@ -37,15 +40,17 @@
     "explorerTransaction": "/tx/#{txid}",
     "baseFactor": "1000000000000000000",
     "server": "http://35.198.177.238:8545",
-    "gateway": "geth"
+    "gateway": "geth",
+    "blockchainKeyPrefix": "eth"
   },
   "LTC": {
-    "client": "",
+    "client": "litecoin",
     "explorerAddress": "",
     "explorerTransaction": "",
     "baseFactor": "100000000",
     "server": "http://admin:changeme@35.204.246.179:19332",
-    "gateway": "litecoind"
+    "gateway": "litecoind",
+    "blockchainKeyPrefix": "ltc"
   },
   "TRST": {
     "client": "",
@@ -53,7 +58,17 @@
     "explorerTransaction": "",
     "baseFactor": "1000000",
     "server": "http://35.198.177.238:8545",
-    "gateway": "geth"
+    "gateway": "geth",
+    "blockchainKeyPrefix": "eth"
+  },
+  "XRP": {
+    "client": "ripple",
+    "explorerAddress": "/address/#{address}",
+    "explorerTransaction": "/tx/#{txid}",
+    "baseFactor": "1000000",
+    "server": "http://admin:changeme@35.204.97.190:5005",
+    "gateway": "rippled",
+    "blockchainKeyPrefix": "xrp"
   },
   "FIAT": {
     "client": "",
