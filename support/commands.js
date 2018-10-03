@@ -56,3 +56,25 @@ Cypress.Commands.add('login', () => {
         })
     })
 })
+
+Cypress.Commands.add('upload_file', (fileName, fileType = ' ', selector) => {
+    cy.get(selector).then(subject => {
+        cy.fixture(fileName, 'base64')
+            .then(Cypress.Blob.base64StringToBlob)
+            .then(blob => {
+                const el = subject[0]
+                const testFile = new File([blob], fileName, { type: fileType })
+                const dataTransfer = new DataTransfer()
+                dataTransfer.items.add(testFile)
+                el.files = dataTransfer.files
+            })
+    })
+})
+
+Cypress.Commands.add('iframe', { prevSubject: 'element' }, $iframe => {
+    return new Cypress.Promise(resolve => {
+        $iframe.on('load', () => {
+            resolve($iframe.contents().find('body'));
+        })
+    })
+})
