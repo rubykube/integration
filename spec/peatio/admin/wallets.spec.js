@@ -81,16 +81,6 @@ context('Wallets', function () {
               var regex = new RegExp('^' + config.blockchainKeyPrefix)
               assert(regex.test(field[0].value), 'Blockchain Key is valid')
             })
-
-            cy.get('#wallet_uri').then(field => {
-              var uri = field[0].value
-              if (currencies.Ethereums.includes(code)) {
-                assert(uri == config.server || uri == 'http://geth:8545', 'URI is correct')
-              }
-              else {
-                assert(uri == config.server, 'URI is valid')
-              }
-            })
           })
         })
       })

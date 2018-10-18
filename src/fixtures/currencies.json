@@ -12,7 +12,6 @@
     "explorerAddress": "/address/#{addres}",
     "explorerTransaction": "/tBCC/tx/#{txid}",
     "baseFactor": "100000000",
-    "server": "http://admin:changeme@35.204.89.49:18332",
     "gateway": "bitcoincashd",
     "blockchainKeyPrefix": "bch"
   },
@@ -21,7 +20,6 @@
     "explorerAddress": "/address/#{address}",
     "explorerTransaction": "/tx/#{txid}",
     "baseFactor": "100000000",
-    "server": "http://admin:changeme@35.204.72.225:18332",
     "gateway": "bitcoind",
     "blockchainKeyPrefix": "btc"
   },
@@ -30,7 +28,6 @@
     "explorerAddress": "",
     "explorerTransaction": "",
     "baseFactor": "100000000",
-    "server": "http://admin:changeme@35.204.90.220:19998",
     "gateway": "dashd",
     "blockchainKeyPrefix": "dash"
   },
@@ -39,7 +36,6 @@
     "explorerAddress": "/address/#{address}",
     "explorerTransaction": "/tx/#{txid}",
     "baseFactor": "1000000000000000000",
-    "server": "http://35.198.177.238:8545",
     "gateway": "geth",
     "blockchainKeyPrefix": "eth"
   },
@@ -48,7 +44,6 @@
     "explorerAddress": "",
     "explorerTransaction": "",
     "baseFactor": "100000000",
-    "server": "http://admin:changeme@35.204.246.179:19332",
     "gateway": "litecoind",
     "blockchainKeyPrefix": "ltc"
   },
@@ -57,7 +52,6 @@
     "explorerAddress": "",
     "explorerTransaction": "",
     "baseFactor": "1000000",
-    "server": "http://35.198.177.238:8545",
     "gateway": "geth",
     "blockchainKeyPrefix": "eth"
   },
@@ -66,7 +60,6 @@
     "explorerAddress": "/address/#{address}",
     "explorerTransaction": "/tx/#{txid}",
     "baseFactor": "1000000",
-    "server": "http://admin:changeme@35.204.97.190:5005",
     "gateway": "rippled",
     "blockchainKeyPrefix": "xrp"
   },
@@ -75,7 +68,6 @@
     "explorerAddress": "",
     "explorerTransaction": "",
     "baseFactor": "1",
-    "server": "",
     "gateway": ""
   }
 }

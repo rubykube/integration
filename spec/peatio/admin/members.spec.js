@@ -75,32 +75,6 @@ context('Members', function () {
           })
         })
       })
-
-      it('Search by wallet addresses', function () {
-        cy.fixture('user.json').then(user => {
-          cy.contains('tr', user.login).contains('a', 'View').then(a => {
-            cy.visit(a[0].href)
-            cy.reload().then(() => {
-              cy.get('.row:nth-child(3)').children().each(card => {
-                var dd = card[0].querySelector('.dl-horizontal > dd:nth-child(8)')
-
-                if (dd != null) {
-                  var addr = dd.innerText
-
-                  cy.fixture('peatio.json').then(peatio => {
-                    cy.visit(peatio.host + 'admin/members/')
-
-                    cy.get('#search_field').select('Wallet address')
-                    cy.get('#search_term').clear().type(addr).should('have.value', addr)
-                    cy.get('.btn').contains('Search').click()
-                    cy.contains('tr', user.login)
-                  })
-                }
-              })
-            })
-          })
-        })
-      })
     })
 
     describe('Viewing account info', function () {
@@ -124,56 +98,6 @@ context('Members', function () {
 
           cy.reload().then(() => {
             cy.get('.row:nth-child(3) > :nth-child(1)').get('dd:last-child').should('be.not.empty')
-          })
-        })
-      })
-
-      it('Checking Deposit Address validity', function () {
-        cy.reload().then(() => {
-          cy.fixture('currencies.json').then(currencies => {
-            cy.get('.row:nth-child(3)').children().each(card => {
-              var currency = card[0].querySelector('.card-header > span:nth-child(3)').innerText
-
-              if (!currencies.Fiats.includes(currency)) {
-                cy.wrap(card[0].querySelector('.dl-horizontal > dd:nth-child(8)').innerText).then(addr => {
-                  if (currencies.Ethereums.includes(currency)) {
-                    return /^(0x)?[0-9a-f]{40}$/.test(addr)
-                  }
-                  else {
-                    var config = currencies[currency]
-                    if (currency == 'XRP') {
-                      cy.request({
-                        url: config.server,
-                        body: {
-                          "jsonrpc": "2.0",
-                          "method": "account_info",
-                          "params": [{
-                            "account": addr.replace(/(\?.*)/, "")
-                          }]
-                        }
-                      }).then(response => {
-                        return response.body.result.status == "success"
-                      })
-                    }
-                    else {
-                      cy.request({
-                        method: 'POST',
-                        url: config.server,
-                        body: {
-                          "jsonrpc": "2.0",
-                          "method": "validateaddress",
-                          "params": [addr]
-                        }
-                      }).then(response => {
-                        return response.body.result.isvalid
-                      })
-                    }
-                  }
-                }).then(validity => {
-                  assert(validity, 'Deposit Address for ' + currency + ' is valid')
-                })
-              }
-            })
           })
         })
       })
