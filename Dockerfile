@@ -11,6 +11,6 @@ RUN npm install
 
 COPY . $APP_DIR/
 
-RUN $(npm bin)/cypress verify
+RUN npx cypress verify
 
-CMD $(npm bin)/cypress run
+CMD ["npx", "cypress", "run"]
