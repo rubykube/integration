@@ -1,7 +1,7 @@
 {
   "name": "integration",
   "version": "1.0.0",
-  "description": "Ruybkube integration testing framework",
+  "description": "Rubykube integration testing framework",
   "main": "index.js",
   "scripts": {
     "test": "cypress run",

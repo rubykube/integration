@@ -1,0 +1,73 @@
+{
+  "Fiats": [
+    "USD",
+    "EUR"
+  ],
+  "Ethereums": [
+    "ETH",
+    "TRST"
+  ],
+  "BCH": {
+    "client": "bitcoincash",
+    "explorerAddress": "/address/#{addres}",
+    "explorerTransaction": "/tBCC/tx/#{txid}",
+    "baseFactor": "100000000",
+    "gateway": "bitcoincashd",
+    "blockchainKeyPrefix": "bch"
+  },
+  "BTC": {
+    "client": "bitcoin",
+    "explorerAddress": "/address/#{address}",
+    "explorerTransaction": "/tx/#{txid}",
+    "baseFactor": "100000000",
+    "gateway": "bitcoind",
+    "blockchainKeyPrefix": "btc"
+  },
+  "DASH": {
+    "client": "dash",
+    "explorerAddress": "",
+    "explorerTransaction": "",
+    "baseFactor": "100000000",
+    "gateway": "dashd",
+    "blockchainKeyPrefix": "dash"
+  },
+  "ETH": {
+    "client": "ethereum",
+    "explorerAddress": "/address/#{address}",
+    "explorerTransaction": "/tx/#{txid}",
+    "baseFactor": "1000000000000000000",
+    "gateway": "geth",
+    "blockchainKeyPrefix": "eth"
+  },
+  "LTC": {
+    "client": "litecoin",
+    "explorerAddress": "",
+    "explorerTransaction": "",
+    "baseFactor": "100000000",
+    "gateway": "litecoind",
+    "blockchainKeyPrefix": "ltc"
+  },
+  "TRST": {
+    "client": "",
+    "explorerAddress": "",
+    "explorerTransaction": "",
+    "baseFactor": "1000000",
+    "gateway": "geth",
+    "blockchainKeyPrefix": "eth"
+  },
+  "XRP": {
+    "client": "ripple",
+    "explorerAddress": "/address/#{address}",
+    "explorerTransaction": "/tx/#{txid}",
+    "baseFactor": "1000000",
+    "gateway": "rippled",
+    "blockchainKeyPrefix": "xrp"
+  },
+  "FIAT": {
+    "client": "",
+    "explorerAddress": "",
+    "explorerTransaction": "",
+    "baseFactor": "1",
+    "gateway": ""
+  }
+}
